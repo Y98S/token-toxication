@@ -453,8 +453,10 @@ export function formatQuotaPercent(value: number) {
   return `${value.toFixed(value >= 99 ? 3 : 1)}%`;
 }
 
-export function codexUsedPercent(value: number | null | undefined) {
-  return value == null || !Number.isFinite(value) ? undefined : Math.max(0, Math.min(100, value));
+export function codexRemainingPercent(usedPercent: number | null | undefined) {
+  return usedPercent == null || !Number.isFinite(usedPercent)
+    ? undefined
+    : Math.max(0, Math.min(100, 100 - usedPercent));
 }
 
 export function formatCodexWindow(seconds: number | null | undefined) {

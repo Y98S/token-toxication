@@ -5,7 +5,27 @@ import { describe, expect, it } from "vite-plus/test";
 
 import { i18n } from "../i18n";
 import { CodexDeviceLoginDialogBody } from "./accounts";
-import { authModeLabel, authModeLifecycleLabel } from "./helpers";
+import { authModeLabel, authModeLifecycleLabel, codexRemainingPercent } from "./helpers";
+
+describe("Codex remaining quota", () => {
+  it.each([
+    [0, 100],
+    [20, 80],
+    [99.5, 0.5],
+    [100, 0],
+    [120, 0],
+    [-5, 100],
+  ])("shows %s percent used as %s percent remaining", (used, remaining) => {
+    expect(codexRemainingPercent(used)).toBe(remaining);
+  });
+
+  it.each([undefined, null, NaN, Infinity, -Infinity])(
+    "keeps unreported or invalid usage (%s) unknown",
+    (used) => {
+      expect(codexRemainingPercent(used)).toBeUndefined();
+    },
+  );
+});
 
 describe("Codex device login dialog", () => {
   it("keeps the device code and verification link visible while pending", () => {

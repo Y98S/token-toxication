@@ -22,7 +22,7 @@ import {
 import { adminPaths } from "../admin-routes";
 import {
   codexQuotaStatus,
-  codexUsedPercent,
+  codexRemainingPercent,
   accountPresetValue,
   applyAccountPreset,
   authModeDescription,
@@ -1044,7 +1044,7 @@ export function CodexAccountDialog({
                       <Trans>Window</Trans>
                     </TableHead>
                     <TableHead className="min-w-48">
-                      <Trans>Used</Trans>
+                      <Trans>Remaining</Trans>
                     </TableHead>
                     <TableHead>
                       <Trans>Reset</Trans>
@@ -1056,7 +1056,7 @@ export function CodexAccountDialog({
                 </TableHeader>
                 <TableBody>
                   {rows.map((row) => {
-                    const usedPercent = codexUsedPercent(row.window?.usedPercent);
+                    const remainingPercent = codexRemainingPercent(row.window?.usedPercent);
                     return (
                       <TableRow key={`${row.limitId}:${row.windowName}`}>
                         <TableCell>
@@ -1070,15 +1070,15 @@ export function CodexAccountDialog({
                           <div className="text-xs text-muted-foreground">{row.windowName}</div>
                         </TableCell>
                         <TableCell>
-                          {usedPercent === undefined ? (
+                          {remainingPercent === undefined ? (
                             <span className="text-xs text-muted-foreground">
                               <Trans>unknown</Trans>
                             </span>
                           ) : (
                             <div className="flex min-w-40 items-center gap-3">
-                              <Progress value={usedPercent} className="min-w-24" />
+                              <Progress value={remainingPercent} className="min-w-24" />
                               <span className="w-16 text-right font-mono text-xs">
-                                {formatQuotaPercent(usedPercent)}
+                                {formatQuotaPercent(remainingPercent)}
                               </span>
                             </div>
                           )}

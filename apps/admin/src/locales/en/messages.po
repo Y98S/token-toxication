@@ -67,12 +67,12 @@ msgid "{0} credential"
 msgstr "{0} credential"
 
 #. placeholder {0}: (seconds / 86_400).toFixed(1)
-#: src/admin-ui/helpers.tsx:469
+#: src/admin-ui/helpers.tsx:471
 msgid "{0} days"
 msgstr "{0} days"
 
 #. placeholder {0}: (seconds / 3_600).toFixed(1)
-#: src/admin-ui/helpers.tsx:476
+#: src/admin-ui/helpers.tsx:478
 msgid "{0} hours"
 msgstr "{0} hours"
 
@@ -91,7 +91,7 @@ msgid "{0} input · {1} cached · {2} output"
 msgstr "{0} input · {1} cached · {2} output"
 
 #. placeholder {0}: limit.remaining
-#: src/admin-ui/helpers.tsx:565
+#: src/admin-ui/helpers.tsx:567
 msgid "{0} remaining"
 msgstr "{0} remaining"
 
@@ -132,19 +132,19 @@ msgstr "{0}: {1}"
 msgid "{0}ms"
 msgstr "{0}ms"
 
-#: src/admin-ui/helpers.tsx:567
+#: src/admin-ui/helpers.tsx:569
 msgid "{amount}, reached"
 msgstr "{amount}, reached"
 
-#: src/admin-ui/helpers.tsx:467
+#: src/admin-ui/helpers.tsx:469
 msgid "{days, plural, one {# day} other {# days}}"
 msgstr "{days, plural, one {# day} other {# days}}"
 
-#: src/admin-ui/helpers.tsx:474
+#: src/admin-ui/helpers.tsx:476
 msgid "{hours, plural, one {# hour} other {# hours}}"
 msgstr "{hours, plural, one {# hour} other {# hours}}"
 
-#: src/admin-ui/helpers.tsx:480
+#: src/admin-ui/helpers.tsx:482
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {# minute} other {# minutes}}"
 
@@ -156,7 +156,7 @@ msgstr "{routeCount, plural, one {# route} other {# routes}}"
 msgid "{running}/{capacity} · {queued} queued"
 msgstr "{running}/{capacity} · {queued} queued"
 
-#: src/admin-ui/helpers.tsx:482
+#: src/admin-ui/helpers.tsx:484
 msgid "{seconds, plural, one {# second} other {# seconds}}"
 msgstr "{seconds, plural, one {# second} other {# seconds}}"
 
@@ -337,7 +337,7 @@ msgstr "API key"
 msgid "API Key"
 msgstr "API Key"
 
-#: src/admin-ui/use-admin-workspace.ts:539
+#: src/admin-ui/use-admin-workspace.ts:545
 msgid "API key activated"
 msgstr "API key activated"
 
@@ -345,7 +345,7 @@ msgstr "API key activated"
 msgid "API key created"
 msgstr "API key created"
 
-#: src/admin-ui/use-admin-workspace.ts:591
+#: src/admin-ui/use-admin-workspace.ts:597
 msgid "API key deleted"
 msgstr "API key deleted"
 
@@ -353,7 +353,7 @@ msgstr "API key deleted"
 msgid "API key not found"
 msgstr "API key not found"
 
-#: src/admin-ui/use-admin-workspace.ts:539
+#: src/admin-ui/use-admin-workspace.ts:545
 msgid "API key paused"
 msgstr "API key paused"
 
@@ -390,12 +390,12 @@ msgstr "Auth mode"
 msgid "Authentication"
 msgstr "Authentication"
 
-#: src/admin-ui/helpers.tsx:503
+#: src/admin-ui/helpers.tsx:505
 msgid "available"
 msgstr "available"
 
-#: src/admin-ui/helpers.tsx:522
-#: src/admin-ui/helpers.tsx:533
+#: src/admin-ui/helpers.tsx:524
+#: src/admin-ui/helpers.tsx:535
 msgid "Available"
 msgstr "Available"
 
@@ -425,7 +425,7 @@ msgid "Backup"
 msgstr "Backup"
 
 #. placeholder {0}: credits.balance
-#: src/admin-ui/helpers.tsx:519
+#: src/admin-ui/helpers.tsx:521
 msgid "Balance {0}"
 msgstr "Balance {0}"
 
@@ -611,7 +611,7 @@ msgstr "Concurrency"
 msgid "Concurrency limit"
 msgstr "Concurrency limit"
 
-#: src/admin-ui/helpers.tsx:566
+#: src/admin-ui/helpers.tsx:568
 msgid "Configured"
 msgstr "Configured"
 
@@ -631,7 +631,7 @@ msgstr "Connection"
 msgid "Control where requests go and how much work this account can run."
 msgstr "Control where requests go and how much work this account can run."
 
-#: src/admin-ui/helpers.tsx:593
+#: src/admin-ui/helpers.tsx:595
 msgid "Copied"
 msgstr "Copied"
 
@@ -940,7 +940,7 @@ msgstr "Light"
 msgid "Limit"
 msgstr "Limit"
 
-#: src/admin-ui/helpers.tsx:496
+#: src/admin-ui/helpers.tsx:498
 msgid "limited"
 msgstr "limited"
 
@@ -1000,7 +1000,7 @@ msgstr "Messages routed"
 msgid "Model"
 msgstr "Model"
 
-#: src/admin-ui/use-admin-workspace.ts:524
+#: src/admin-ui/use-admin-workspace.ts:530
 msgid "Model added"
 msgstr "Model added"
 
@@ -1011,11 +1011,11 @@ msgstr "Model added"
 msgid "Model Catalog"
 msgstr "Model Catalog"
 
-#: src/admin-ui/use-admin-workspace.ts:545
+#: src/admin-ui/use-admin-workspace.ts:551
 msgid "Model disabled"
 msgstr "Model disabled"
 
-#: src/admin-ui/use-admin-workspace.ts:545
+#: src/admin-ui/use-admin-workspace.ts:551
 msgid "Model enabled"
 msgstr "Model enabled"
 
@@ -1028,7 +1028,7 @@ msgstr "Model group"
 msgid "Model ID"
 msgstr "Model ID"
 
-#: src/admin-ui/use-admin-workspace.ts:554
+#: src/admin-ui/use-admin-workspace.ts:560
 msgid "Model updated"
 msgstr "Model updated"
 
@@ -1048,11 +1048,11 @@ msgstr "Models and quota reported by this Google account."
 msgid "Name"
 msgstr "Name"
 
-#: src/admin-ui/helpers.tsx:581
+#: src/admin-ui/helpers.tsx:583
 msgid "never"
 msgstr "never"
 
-#: src/admin-ui/helpers.tsx:548
+#: src/admin-ui/helpers.tsx:550
 msgid "Never"
 msgstr "Never"
 
@@ -1163,7 +1163,7 @@ msgstr "No stripped params"
 msgid "non-stream"
 msgstr "non-stream"
 
-#: src/admin-ui/helpers.tsx:525
+#: src/admin-ui/helpers.tsx:527
 msgid "None"
 msgstr "None"
 
@@ -1335,7 +1335,7 @@ msgstr "Provider Account"
 msgid "Provider account created"
 msgstr "Provider account created"
 
-#: src/admin-ui/use-admin-workspace.ts:617
+#: src/admin-ui/use-admin-workspace.ts:623
 msgid "Provider account deleted"
 msgstr "Provider account deleted"
 
@@ -1353,7 +1353,7 @@ msgstr "Provider account updated"
 msgid "Provider Accounts"
 msgstr "Provider Accounts"
 
-#: src/admin-ui/use-admin-workspace.ts:598
+#: src/admin-ui/use-admin-workspace.ts:604
 msgid "Provider activated"
 msgstr "Provider activated"
 
@@ -1372,7 +1372,7 @@ msgstr "Provider Model Route not found"
 msgid "Provider Model Routes"
 msgstr "Provider Model Routes"
 
-#: src/admin-ui/use-admin-workspace.ts:598
+#: src/admin-ui/use-admin-workspace.ts:604
 msgid "Provider paused"
 msgstr "Provider paused"
 
@@ -1380,15 +1380,15 @@ msgstr "Provider paused"
 msgid "Provider pool"
 msgstr "Provider pool"
 
-#: src/admin-ui/use-admin-workspace.ts:533
+#: src/admin-ui/use-admin-workspace.ts:539
 msgid "Provider route added"
 msgstr "Provider route added"
 
-#: src/admin-ui/use-admin-workspace.ts:580
+#: src/admin-ui/use-admin-workspace.ts:586
 msgid "Provider route deleted"
 msgstr "Provider route deleted"
 
-#: src/admin-ui/use-admin-workspace.ts:571
+#: src/admin-ui/use-admin-workspace.ts:577
 msgid "Provider route updated"
 msgstr "Provider route updated"
 
@@ -1440,7 +1440,7 @@ msgstr "rate limited"
 msgid "Raw refresh token"
 msgstr "Raw refresh token"
 
-#: src/admin-ui/helpers.tsx:559
+#: src/admin-ui/helpers.tsx:561
 msgid "Reached"
 msgstr "Reached"
 
@@ -1461,11 +1461,11 @@ msgstr "Reconnect Antigravity"
 msgid "recovering"
 msgstr "recovering"
 
-#: src/admin-ui/helpers.tsx:537
+#: src/admin-ui/helpers.tsx:539
 msgid "Redeemed"
 msgstr "Redeemed"
 
-#: src/admin-ui/helpers.tsx:535
+#: src/admin-ui/helpers.tsx:537
 msgid "Redeeming"
 msgstr "Redeeming"
 
@@ -1511,6 +1511,7 @@ msgstr "Relay status, latency, model, sanitized routing metadata, and token acco
 
 #: src/admin-ui/accounts.tsx:681
 #: src/admin-ui/accounts.tsx:743
+#: src/admin-ui/accounts.tsx:1047
 msgid "Remaining"
 msgstr "Remaining"
 
@@ -1608,11 +1609,11 @@ msgstr "Route"
 msgid "Route binding"
 msgstr "Route binding"
 
-#: src/admin-ui/use-admin-workspace.ts:560
+#: src/admin-ui/use-admin-workspace.ts:566
 msgid "Route disabled"
 msgstr "Route disabled"
 
-#: src/admin-ui/use-admin-workspace.ts:560
+#: src/admin-ui/use-admin-workspace.ts:566
 msgid "Route enabled"
 msgstr "Route enabled"
 
@@ -1897,23 +1898,23 @@ msgstr "Unexpected key prefix"
 #: src/admin-ui/helpers.tsx:133
 #: src/admin-ui/helpers.tsx:440
 #: src/admin-ui/helpers.tsx:442
-#: src/admin-ui/helpers.tsx:462
-#: src/admin-ui/helpers.tsx:509
-#: src/admin-ui/helpers.tsx:527
-#: src/admin-ui/helpers.tsx:544
-#: src/admin-ui/helpers.tsx:559
-#: src/admin-ui/helpers.tsx:571
+#: src/admin-ui/helpers.tsx:464
+#: src/admin-ui/helpers.tsx:511
+#: src/admin-ui/helpers.tsx:529
+#: src/admin-ui/helpers.tsx:546
+#: src/admin-ui/helpers.tsx:561
+#: src/admin-ui/helpers.tsx:573
 msgid "unknown"
 msgstr "unknown"
 
 #: src/admin-ui/helpers.tsx:348
-#: src/admin-ui/helpers.tsx:539
-#: src/admin-ui/helpers.tsx:576
+#: src/admin-ui/helpers.tsx:541
+#: src/admin-ui/helpers.tsx:578
 msgid "Unknown"
 msgstr "Unknown"
 
 #: src/admin-ui/accounts.tsx:1378
-#: src/admin-ui/helpers.tsx:516
+#: src/admin-ui/helpers.tsx:518
 msgid "Unlimited"
 msgstr "Unlimited"
 
@@ -1985,10 +1986,6 @@ msgstr "Use the credentials from your service environment."
 #: src/admin-ui/accounts.tsx:1394
 msgid "Use this account for relay traffic"
 msgstr "Use this account for relay traffic"
-
-#: src/admin-ui/accounts.tsx:1047
-msgid "Used"
-msgstr "Used"
 
 #: src/App.tsx:201
 msgid "Username"

@@ -67,12 +67,12 @@ msgid "{0} credential"
 msgstr "{0} 凭证"
 
 #. placeholder {0}: (seconds / 86_400).toFixed(1)
-#: src/admin-ui/helpers.tsx:469
+#: src/admin-ui/helpers.tsx:471
 msgid "{0} days"
 msgstr "{0} 天"
 
 #. placeholder {0}: (seconds / 3_600).toFixed(1)
-#: src/admin-ui/helpers.tsx:476
+#: src/admin-ui/helpers.tsx:478
 msgid "{0} hours"
 msgstr "{0} 小时"
 
@@ -91,7 +91,7 @@ msgid "{0} input · {1} cached · {2} output"
 msgstr "{0} 输入 · {1} 缓存 · {2} 输出"
 
 #. placeholder {0}: limit.remaining
-#: src/admin-ui/helpers.tsx:565
+#: src/admin-ui/helpers.tsx:567
 msgid "{0} remaining"
 msgstr "剩余 {0}"
 
@@ -132,19 +132,19 @@ msgstr "{0}：{1}"
 msgid "{0}ms"
 msgstr "{0}ms"
 
-#: src/admin-ui/helpers.tsx:567
+#: src/admin-ui/helpers.tsx:569
 msgid "{amount}, reached"
 msgstr "{amount}，已达上限"
 
-#: src/admin-ui/helpers.tsx:467
+#: src/admin-ui/helpers.tsx:469
 msgid "{days, plural, one {# day} other {# days}}"
 msgstr "{days, plural, other {# 天}}"
 
-#: src/admin-ui/helpers.tsx:474
+#: src/admin-ui/helpers.tsx:476
 msgid "{hours, plural, one {# hour} other {# hours}}"
 msgstr "{hours, plural, other {# 小时}}"
 
-#: src/admin-ui/helpers.tsx:480
+#: src/admin-ui/helpers.tsx:482
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, other {# 分钟}}"
 
@@ -156,7 +156,7 @@ msgstr "{routeCount, plural, one {# 个路由} other {# 个路由}}"
 msgid "{running}/{capacity} · {queued} queued"
 msgstr "{running}/{capacity} · 排队 {queued}"
 
-#: src/admin-ui/helpers.tsx:482
+#: src/admin-ui/helpers.tsx:484
 msgid "{seconds, plural, one {# second} other {# seconds}}"
 msgstr "{seconds, plural, other {# 秒}}"
 
@@ -337,7 +337,7 @@ msgstr "API 密钥"
 msgid "API Key"
 msgstr "API 密钥"
 
-#: src/admin-ui/use-admin-workspace.ts:539
+#: src/admin-ui/use-admin-workspace.ts:545
 msgid "API key activated"
 msgstr "API 密钥已启用"
 
@@ -345,7 +345,7 @@ msgstr "API 密钥已启用"
 msgid "API key created"
 msgstr "API 密钥已创建"
 
-#: src/admin-ui/use-admin-workspace.ts:591
+#: src/admin-ui/use-admin-workspace.ts:597
 msgid "API key deleted"
 msgstr "API 密钥已删除"
 
@@ -353,7 +353,7 @@ msgstr "API 密钥已删除"
 msgid "API key not found"
 msgstr "未找到 API 密钥"
 
-#: src/admin-ui/use-admin-workspace.ts:539
+#: src/admin-ui/use-admin-workspace.ts:545
 msgid "API key paused"
 msgstr "API 密钥已暂停"
 
@@ -390,12 +390,12 @@ msgstr "认证方式"
 msgid "Authentication"
 msgstr "认证方式"
 
-#: src/admin-ui/helpers.tsx:503
+#: src/admin-ui/helpers.tsx:505
 msgid "available"
 msgstr "可用"
 
-#: src/admin-ui/helpers.tsx:522
-#: src/admin-ui/helpers.tsx:533
+#: src/admin-ui/helpers.tsx:524
+#: src/admin-ui/helpers.tsx:535
 msgid "Available"
 msgstr "可用"
 
@@ -425,7 +425,7 @@ msgid "Backup"
 msgstr "备用"
 
 #. placeholder {0}: credits.balance
-#: src/admin-ui/helpers.tsx:519
+#: src/admin-ui/helpers.tsx:521
 msgid "Balance {0}"
 msgstr "余额 {0}"
 
@@ -611,7 +611,7 @@ msgstr "并发"
 msgid "Concurrency limit"
 msgstr "并发上限"
 
-#: src/admin-ui/helpers.tsx:566
+#: src/admin-ui/helpers.tsx:568
 msgid "Configured"
 msgstr "已配置"
 
@@ -631,7 +631,7 @@ msgstr "连接"
 msgid "Control where requests go and how much work this account can run."
 msgstr "控制请求去向以及此账号可以处理的并发工作量。"
 
-#: src/admin-ui/helpers.tsx:593
+#: src/admin-ui/helpers.tsx:595
 msgid "Copied"
 msgstr "已复制"
 
@@ -940,7 +940,7 @@ msgstr "浅色"
 msgid "Limit"
 msgstr "限额"
 
-#: src/admin-ui/helpers.tsx:496
+#: src/admin-ui/helpers.tsx:498
 msgid "limited"
 msgstr "已限流"
 
@@ -1000,7 +1000,7 @@ msgstr "已路由 Messages"
 msgid "Model"
 msgstr "模型"
 
-#: src/admin-ui/use-admin-workspace.ts:524
+#: src/admin-ui/use-admin-workspace.ts:530
 msgid "Model added"
 msgstr "模型已添加"
 
@@ -1011,11 +1011,11 @@ msgstr "模型已添加"
 msgid "Model Catalog"
 msgstr "模型目录"
 
-#: src/admin-ui/use-admin-workspace.ts:545
+#: src/admin-ui/use-admin-workspace.ts:551
 msgid "Model disabled"
 msgstr "模型已停用"
 
-#: src/admin-ui/use-admin-workspace.ts:545
+#: src/admin-ui/use-admin-workspace.ts:551
 msgid "Model enabled"
 msgstr "模型已启用"
 
@@ -1028,7 +1028,7 @@ msgstr "模型组"
 msgid "Model ID"
 msgstr "模型 ID"
 
-#: src/admin-ui/use-admin-workspace.ts:554
+#: src/admin-ui/use-admin-workspace.ts:560
 msgid "Model updated"
 msgstr "模型已更新"
 
@@ -1048,11 +1048,11 @@ msgstr "此 Google 账号报告的模型与配额。"
 msgid "Name"
 msgstr "名称"
 
-#: src/admin-ui/helpers.tsx:581
+#: src/admin-ui/helpers.tsx:583
 msgid "never"
 msgstr "从未"
 
-#: src/admin-ui/helpers.tsx:548
+#: src/admin-ui/helpers.tsx:550
 msgid "Never"
 msgstr "永不"
 
@@ -1163,7 +1163,7 @@ msgstr "未剥离参数"
 msgid "non-stream"
 msgstr "非流式"
 
-#: src/admin-ui/helpers.tsx:525
+#: src/admin-ui/helpers.tsx:527
 msgid "None"
 msgstr "无"
 
@@ -1335,7 +1335,7 @@ msgstr "供应商账号"
 msgid "Provider account created"
 msgstr "供应商账号已创建"
 
-#: src/admin-ui/use-admin-workspace.ts:617
+#: src/admin-ui/use-admin-workspace.ts:623
 msgid "Provider account deleted"
 msgstr "供应商账号已删除"
 
@@ -1353,7 +1353,7 @@ msgstr "供应商账号已更新"
 msgid "Provider Accounts"
 msgstr "供应商账号"
 
-#: src/admin-ui/use-admin-workspace.ts:598
+#: src/admin-ui/use-admin-workspace.ts:604
 msgid "Provider activated"
 msgstr "供应商已启用"
 
@@ -1372,7 +1372,7 @@ msgstr "未找到供应商模型路由"
 msgid "Provider Model Routes"
 msgstr "供应商模型路由"
 
-#: src/admin-ui/use-admin-workspace.ts:598
+#: src/admin-ui/use-admin-workspace.ts:604
 msgid "Provider paused"
 msgstr "供应商已暂停"
 
@@ -1380,15 +1380,15 @@ msgstr "供应商已暂停"
 msgid "Provider pool"
 msgstr "供应商池"
 
-#: src/admin-ui/use-admin-workspace.ts:533
+#: src/admin-ui/use-admin-workspace.ts:539
 msgid "Provider route added"
 msgstr "供应商路由已添加"
 
-#: src/admin-ui/use-admin-workspace.ts:580
+#: src/admin-ui/use-admin-workspace.ts:586
 msgid "Provider route deleted"
 msgstr "供应商路由已删除"
 
-#: src/admin-ui/use-admin-workspace.ts:571
+#: src/admin-ui/use-admin-workspace.ts:577
 msgid "Provider route updated"
 msgstr "供应商路由已更新"
 
@@ -1440,7 +1440,7 @@ msgstr "已限流"
 msgid "Raw refresh token"
 msgstr "原始 refresh token"
 
-#: src/admin-ui/helpers.tsx:559
+#: src/admin-ui/helpers.tsx:561
 msgid "Reached"
 msgstr "已达上限"
 
@@ -1461,11 +1461,11 @@ msgstr "重新连接 Antigravity"
 msgid "recovering"
 msgstr "恢复检查中"
 
-#: src/admin-ui/helpers.tsx:537
+#: src/admin-ui/helpers.tsx:539
 msgid "Redeemed"
 msgstr "已兑换"
 
-#: src/admin-ui/helpers.tsx:535
+#: src/admin-ui/helpers.tsx:537
 msgid "Redeeming"
 msgstr "兑换中"
 
@@ -1511,6 +1511,7 @@ msgstr "中继状态、延迟、模型、脱敏路由元数据与 token 计量�
 
 #: src/admin-ui/accounts.tsx:681
 #: src/admin-ui/accounts.tsx:743
+#: src/admin-ui/accounts.tsx:1047
 msgid "Remaining"
 msgstr "剩余"
 
@@ -1608,11 +1609,11 @@ msgstr "路由"
 msgid "Route binding"
 msgstr "路由绑定"
 
-#: src/admin-ui/use-admin-workspace.ts:560
+#: src/admin-ui/use-admin-workspace.ts:566
 msgid "Route disabled"
 msgstr "路由已停用"
 
-#: src/admin-ui/use-admin-workspace.ts:560
+#: src/admin-ui/use-admin-workspace.ts:566
 msgid "Route enabled"
 msgstr "路由已启用"
 
@@ -1897,23 +1898,23 @@ msgstr "密钥前缀不符合预期"
 #: src/admin-ui/helpers.tsx:133
 #: src/admin-ui/helpers.tsx:440
 #: src/admin-ui/helpers.tsx:442
-#: src/admin-ui/helpers.tsx:462
-#: src/admin-ui/helpers.tsx:509
-#: src/admin-ui/helpers.tsx:527
-#: src/admin-ui/helpers.tsx:544
-#: src/admin-ui/helpers.tsx:559
-#: src/admin-ui/helpers.tsx:571
+#: src/admin-ui/helpers.tsx:464
+#: src/admin-ui/helpers.tsx:511
+#: src/admin-ui/helpers.tsx:529
+#: src/admin-ui/helpers.tsx:546
+#: src/admin-ui/helpers.tsx:561
+#: src/admin-ui/helpers.tsx:573
 msgid "unknown"
 msgstr "未知"
 
 #: src/admin-ui/helpers.tsx:348
-#: src/admin-ui/helpers.tsx:539
-#: src/admin-ui/helpers.tsx:576
+#: src/admin-ui/helpers.tsx:541
+#: src/admin-ui/helpers.tsx:578
 msgid "Unknown"
 msgstr "未知"
 
 #: src/admin-ui/accounts.tsx:1378
-#: src/admin-ui/helpers.tsx:516
+#: src/admin-ui/helpers.tsx:518
 msgid "Unlimited"
 msgstr "无限制"
 
@@ -1985,10 +1986,6 @@ msgstr "使用服务环境中的凭据。"
 #: src/admin-ui/accounts.tsx:1394
 msgid "Use this account for relay traffic"
 msgstr "用此账号处理中继流量"
-
-#: src/admin-ui/accounts.tsx:1047
-msgid "Used"
-msgstr "已使用"
 
 #: src/App.tsx:201
 msgid "Username"

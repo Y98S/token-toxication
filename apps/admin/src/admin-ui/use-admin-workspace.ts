@@ -507,7 +507,13 @@ export function useAdminWorkspace() {
       toast.error(message);
     } finally {
       setIsCodexDetailsLoading(false);
-      await refresh();
+      // Quota checks can update account health. Refresh it without replacing
+      // the account list with a skeleton, which collapses the page and scroll.
+      try {
+        applyWorkspace(await fetchWorkspace());
+      } catch (error) {
+        handleWorkspaceError(error);
+      }
     }
   }
 
