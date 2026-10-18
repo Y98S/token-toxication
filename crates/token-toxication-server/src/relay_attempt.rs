@@ -48,6 +48,7 @@ pub(crate) struct RelayAttemptLog {
 
 #[derive(Debug, Default, Clone, Copy, PartialEq, Eq)]
 pub(crate) struct TokenUsage {
+    pub complete: bool,
     pub input_tokens: u64,
     pub cached_input_tokens: u64,
     pub output_tokens: u64,
@@ -293,7 +294,15 @@ impl RelayAttempt {
                 model: Some(self.requested_model.clone()),
                 upstream_model: Some(self.selection.upstream_model_id.clone()),
                 upstream_url: log.upstream_url.as_deref().map(sanitize_upstream_url),
-                request_summary: log.request_summary.clone(),
+                request_summary: log.request_summary.clone().map(|mut summary| {
+                    summary.usage_complete = Some(usage.complete);
+                    summary.attempt_started_at = Some(
+                        Utc::now()
+                            - chrono::Duration::from_std(self.started.elapsed())
+                                .unwrap_or_default(),
+                    );
+                    summary
+                }),
                 status_code,
                 latency_ms: self.started.elapsed().as_millis() as u64,
                 ttft_ms: log.ttft_ms,

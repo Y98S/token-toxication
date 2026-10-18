@@ -62,7 +62,7 @@ msgid "{0} concurrent requests"
 msgstr "{0} concurrent requests"
 
 #. placeholder {0}: selectedPreset.label
-#: src/admin-ui/accounts.tsx:1301
+#: src/admin-ui/accounts.tsx:1303
 msgid "{0} credential"
 msgstr "{0} credential"
 
@@ -148,11 +148,11 @@ msgstr "{hours, plural, one {# hour} other {# hours}}"
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {# minute} other {# minutes}}"
 
-#: src/admin-ui/accounts.tsx:202
+#: src/admin-ui/accounts.tsx:203
 msgid "{routeCount, plural, one {# route} other {# routes}}"
 msgstr "{routeCount, plural, one {# route} other {# routes}}"
 
-#: src/admin-ui/accounts.tsx:1432
+#: src/admin-ui/accounts.tsx:1434
 msgid "{running}/{capacity} · {queued} queued"
 msgstr "{running}/{capacity} · {queued} queued"
 
@@ -164,8 +164,8 @@ msgstr "{seconds, plural, one {# second} other {# seconds}}"
 msgid "{value, plural, one {# request} other {# requests}}"
 msgstr "{value, plural, one {# request} other {# requests}}"
 
-#: src/admin-ui/accounts.tsx:597
-#: src/admin-ui/accounts.tsx:1162
+#: src/admin-ui/accounts.tsx:598
+#: src/admin-ui/accounts.tsx:1164
 #: src/admin-ui/dashboard.tsx:118
 msgid "Account"
 msgstr "Account"
@@ -192,7 +192,7 @@ msgstr "active upstream accounts"
 msgid "Add a provider account to relay traffic."
 msgstr "Add a provider account to relay traffic."
 
-#: src/admin-ui/accounts.tsx:503
+#: src/admin-ui/accounts.tsx:504
 msgid "Add a provider route from a Catalog Model to make this account schedulable."
 msgstr "Add a provider route from a Catalog Model to make this account schedulable."
 
@@ -204,15 +204,15 @@ msgstr "Add a route from the model catalog to make this Catalog Model routable."
 msgid "Add a route to make a catalog model reachable."
 msgstr "Add a route to make a catalog model reachable."
 
-#: src/admin-ui/accounts.tsx:1419
+#: src/admin-ui/accounts.tsx:1421
 msgid "Add account"
 msgstr "Add account"
 
-#: src/admin-ui/accounts.tsx:146
+#: src/admin-ui/accounts.tsx:147
 msgid "Add Account"
 msgstr "Add Account"
 
-#: src/admin-ui/accounts.tsx:166
+#: src/admin-ui/accounts.tsx:167
 msgid "Add an account to make the relay schedulable."
 msgstr "Add an account to make the relay schedulable."
 
@@ -257,7 +257,7 @@ msgstr "Add model"
 msgid "Add Model"
 msgstr "Add Model"
 
-#: src/admin-ui/accounts.tsx:1151
+#: src/admin-ui/accounts.tsx:1153
 msgid "Add provider account"
 msgstr "Add provider account"
 
@@ -371,22 +371,26 @@ msgstr "API Keys"
 msgid "Appearance"
 msgstr "Appearance"
 
+#: src/admin-ui/quota-capacity.tsx:107
+msgid "At the same model, tier and token mix"
+msgstr "At the same model, tier and token mix"
+
 #: src/admin-ui/logs.tsx:163
 #: src/admin-ui/logs.tsx:574
 msgid "Attempt"
 msgstr "Attempt"
 
-#: src/admin-ui/accounts.tsx:641
-#: src/admin-ui/accounts.tsx:961
+#: src/admin-ui/accounts.tsx:642
+#: src/admin-ui/accounts.tsx:962
 msgid "Auth"
 msgstr "Auth"
 
-#: src/admin-ui/accounts.tsx:1265
+#: src/admin-ui/accounts.tsx:1267
 msgid "Auth mode"
 msgstr "Auth mode"
 
-#: src/admin-ui/accounts.tsx:408
-#: src/admin-ui/accounts.tsx:1259
+#: src/admin-ui/accounts.tsx:409
+#: src/admin-ui/accounts.tsx:1261
 msgid "Authentication"
 msgstr "Authentication"
 
@@ -412,7 +416,7 @@ msgstr "Back to model catalog"
 msgid "Back to overview"
 msgstr "Back to overview"
 
-#: src/admin-ui/accounts.tsx:321
+#: src/admin-ui/accounts.tsx:322
 msgid "Back to provider accounts"
 msgstr "Back to provider accounts"
 
@@ -429,8 +433,8 @@ msgstr "Backup"
 msgid "Balance {0}"
 msgstr "Balance {0}"
 
-#: src/admin-ui/accounts.tsx:427
-#: src/admin-ui/accounts.tsx:1241
+#: src/admin-ui/accounts.tsx:428
+#: src/admin-ui/accounts.tsx:1243
 msgid "Base URL"
 msgstr "Base URL"
 
@@ -458,7 +462,11 @@ msgstr "blocked"
 msgid "Cache hit rate"
 msgstr "Cache hit rate"
 
-#: src/admin-ui/accounts.tsx:855
+#: src/admin-ui/quota-capacity.tsx:57
+msgid "Cached input"
+msgstr "Cached input"
+
+#: src/admin-ui/accounts.tsx:856
 msgid "Cancel sign-in"
 msgstr "Cancel sign-in"
 
@@ -467,13 +475,13 @@ msgid "Catalog details"
 msgstr "Catalog details"
 
 #: src/admin-routes.tsx:14
-#: src/admin-ui/accounts.tsx:511
+#: src/admin-ui/accounts.tsx:512
 #: src/admin-ui/models.tsx:388
 #: src/admin-ui/models.tsx:659
 msgid "Catalog Model"
 msgstr "Catalog Model"
 
-#: src/admin-ui/accounts.tsx:496
+#: src/admin-ui/accounts.tsx:497
 msgid "Catalog Model bindings that use this Provider Account."
 msgstr "Catalog Model bindings that use this Provider Account."
 
@@ -489,7 +497,7 @@ msgstr "Catalog models"
 msgid "Chat routed"
 msgstr "Chat routed"
 
-#: src/admin-ui/accounts.tsx:1262
+#: src/admin-ui/accounts.tsx:1264
 msgid "Choose how the relay obtains and sends the upstream credential."
 msgstr "Choose how the relay obtains and sends the upstream credential."
 
@@ -539,18 +547,18 @@ msgstr "Client setup"
 msgid "Client Setup"
 msgstr "Client Setup"
 
-#: src/admin-ui/accounts.tsx:855
+#: src/admin-ui/accounts.tsx:856
 #: src/components/ui/dialog.tsx:66
 #: src/components/ui/dialog.tsx:103
 #: src/components/ui/sheet.tsx:71
 msgid "Close"
 msgstr "Close"
 
-#: src/admin-ui/accounts.tsx:938
+#: src/admin-ui/accounts.tsx:939
 msgid "Codex account"
 msgstr "Codex account"
 
-#: src/admin-ui/accounts.tsx:1238
+#: src/admin-ui/accounts.tsx:1240
 msgid "Codex account API base"
 msgstr "Codex account API base"
 
@@ -574,8 +582,8 @@ msgstr "Codex environment"
 msgid "Codex provider configuration"
 msgstr "Codex provider configuration"
 
-#: src/admin-ui/accounts.tsx:222
-#: src/admin-ui/accounts.tsx:229
+#: src/admin-ui/accounts.tsx:223
+#: src/admin-ui/accounts.tsx:230
 msgid "Codex quota"
 msgstr "Codex quota"
 
@@ -583,13 +591,27 @@ msgstr "Codex quota"
 msgid "Codex Responses"
 msgstr "Codex Responses"
 
-#: src/admin-ui/accounts.tsx:848
+#: src/admin-ui/accounts.tsx:849
 msgid "Codex sign-in failed"
 msgstr "Codex sign-in failed"
 
 #: src/admin-ui/client-setup.tsx:506
 msgid "Codex uses its own model catalog and chooses the model. Check that the selected model has a compatible relay route; every fallback route must support the protocol Codex sends."
 msgstr "Codex uses its own model catalog and chooses the model. Check that the selected model has a compatible relay route; every fallback route must support the protocol Codex sends."
+
+#: src/admin-ui/quota-capacity.tsx:168
+msgid "Collected automatically from this proxy. Usage elsewhere and delayed upstream quota updates can affect estimates. This is an observed workload estimate, not an official token allowance."
+msgstr "Collected automatically from this proxy. Usage elsewhere and delayed upstream quota updates can affect estimates. This is an observed workload estimate, not an official token allowance."
+
+#: src/admin-ui/quota-capacity.tsx:25
+msgid "Collecting data. At least 10 percentage points of consumption are needed."
+msgstr "Collecting data. At least 10 percentage points of consumption are needed."
+
+#. placeholder {0}: report.completeAttempts
+#. placeholder {1}: report.attempts
+#: src/admin-ui/quota-capacity.tsx:131
+msgid "Complete metering: {0} / {1} attempts"
+msgstr "Complete metering: {0} / {1} attempts"
 
 #: src/admin-ui/dashboard.tsx:356
 msgid "Completed avg / {intervalMinutes} min"
@@ -611,19 +633,23 @@ msgstr "Concurrency limit"
 msgid "Configured"
 msgstr "Configured"
 
-#: src/admin-ui/accounts.tsx:1362
+#: src/admin-ui/accounts.tsx:1364
 msgid "Configured in Model Catalog"
 msgstr "Configured in Model Catalog"
 
-#: src/admin-ui/accounts.tsx:395
+#: src/admin-ui/accounts.tsx:396
 msgid "Configured upstream identity and scheduling state."
 msgstr "Configured upstream identity and scheduling state."
 
-#: src/admin-ui/accounts.tsx:392
+#: src/admin-ui/quota-capacity.tsx:15
+msgid "Confirming quota recovery"
+msgstr "Confirming quota recovery"
+
+#: src/admin-ui/accounts.tsx:393
 msgid "Connection"
 msgstr "Connection"
 
-#: src/admin-ui/accounts.tsx:1359
+#: src/admin-ui/accounts.tsx:1361
 msgid "Control where requests go and how much work this account can run."
 msgstr "Control where requests go and how much work this account can run."
 
@@ -635,7 +661,7 @@ msgstr "Copied"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/admin-ui/accounts.tsx:824
+#: src/admin-ui/accounts.tsx:825
 msgid "Copy code"
 msgstr "Copy code"
 
@@ -652,7 +678,7 @@ msgstr "Create"
 msgid "Create a key before connecting a client."
 msgstr "Create a key before connecting a client."
 
-#: src/admin-ui/accounts.tsx:480
+#: src/admin-ui/accounts.tsx:481
 msgid "Create a new Codex device-login account"
 msgstr "Create a new Codex device-login account"
 
@@ -664,7 +690,7 @@ msgstr "Create API key"
 msgid "Create key"
 msgstr "Create key"
 
-#: src/admin-ui/accounts.tsx:445
+#: src/admin-ui/accounts.tsx:446
 #: src/admin-ui/api-keys.tsx:333
 msgid "Created"
 msgstr "Created"
@@ -673,11 +699,11 @@ msgstr "Created"
 msgid "Credential details"
 msgstr "Credential details"
 
-#: src/admin-ui/accounts.tsx:456
+#: src/admin-ui/accounts.tsx:457
 msgid "Credential lifecycle"
 msgstr "Credential lifecycle"
 
-#: src/admin-ui/accounts.tsx:987
+#: src/admin-ui/accounts.tsx:988
 msgid "Credits"
 msgstr "Credits"
 
@@ -685,7 +711,7 @@ msgstr "Credits"
 msgid "Current service assumptions exposed by the frontend."
 msgstr "Current service assumptions exposed by the frontend."
 
-#: src/admin-ui/accounts.tsx:1188
+#: src/admin-ui/accounts.tsx:1190
 msgid "Custom"
 msgstr "Custom"
 
@@ -713,7 +739,7 @@ msgstr "DeepSeek Harness provider"
 msgid "Defaults to model ID"
 msgstr "Defaults to model ID"
 
-#: src/admin-ui/accounts.tsx:382
+#: src/admin-ui/accounts.tsx:383
 #: src/admin-ui/api-keys.tsx:261
 #: src/admin-ui/models.tsx:623
 msgid "Delete"
@@ -728,22 +754,22 @@ msgstr "Deprecated"
 msgid "Description"
 msgstr "Description"
 
-#: src/admin-ui/accounts.tsx:815
+#: src/admin-ui/accounts.tsx:816
 msgid "Device code"
 msgstr "Device code"
 
-#: src/admin-ui/accounts.tsx:848
+#: src/admin-ui/accounts.tsx:849
 msgid "Device code expired"
 msgstr "Device code expired"
 
-#: src/admin-ui/accounts.tsx:374
+#: src/admin-ui/accounts.tsx:375
 #: src/admin-ui/api-keys.tsx:257
 #: src/admin-ui/models.tsx:394
 #: src/admin-ui/models.tsx:619
 msgid "Disable"
 msgstr "Disable"
 
-#: src/admin-ui/accounts.tsx:275
+#: src/admin-ui/accounts.tsx:276
 msgid "Disabled"
 msgstr "Disabled"
 
@@ -764,27 +790,27 @@ msgstr "Display Name"
 msgid "Each point counts completed requests in one interval. Hover or focus for details."
 msgstr "Each point counts completed requests in one interval. Hover or focus for details."
 
-#: src/admin-ui/accounts.tsx:378
+#: src/admin-ui/accounts.tsx:379
 msgid "Edit"
 msgstr "Edit"
 
-#: src/admin-ui/accounts.tsx:1151
+#: src/admin-ui/accounts.tsx:1153
 msgid "Edit provider account"
 msgstr "Edit provider account"
 
-#: src/admin-ui/accounts.tsx:374
+#: src/admin-ui/accounts.tsx:375
 #: src/admin-ui/api-keys.tsx:257
 #: src/admin-ui/models.tsx:394
 #: src/admin-ui/models.tsx:619
 msgid "Enable"
 msgstr "Enable"
 
-#: src/admin-ui/accounts.tsx:275
+#: src/admin-ui/accounts.tsx:276
 #: src/admin-ui/models.tsx:1019
 msgid "Enabled"
 msgstr "Enabled"
 
-#: src/admin-ui/accounts.tsx:877
+#: src/admin-ui/accounts.tsx:878
 msgid "Enter this code on the official Codex verification page."
 msgstr "Enter this code on the official Codex verification page."
 
@@ -796,6 +822,14 @@ msgstr "Environment"
 msgid "Error"
 msgstr "Error"
 
+#: src/admin-ui/quota-capacity.tsx:13
+msgid "Estimate available"
+msgstr "Estimate available"
+
+#: src/admin-ui/quota-capacity.tsx:102
+msgid "Estimated tokens for 100% quota"
+msgstr "Estimated tokens for 100% quota"
+
 #: src/admin-ui/models.tsx:98
 msgid "Every exact model name clients may send."
 msgstr "Every exact model name clients may send."
@@ -804,17 +838,17 @@ msgstr "Every exact model name clients may send."
 msgid "Exact upstream model ID"
 msgstr "Exact upstream model ID"
 
-#: src/admin-ui/accounts.tsx:1012
+#: src/admin-ui/accounts.tsx:1013
 #: src/admin-ui/api-keys.tsx:345
 msgid "Expires"
 msgstr "Expires"
 
 #. placeholder {0}: formatDate(login.expiresAt)
-#: src/admin-ui/accounts.tsx:831
+#: src/admin-ui/accounts.tsx:832
 msgid "Expires {0}"
 msgstr "Expires {0}"
 
-#: src/admin-ui/accounts.tsx:1383
+#: src/admin-ui/accounts.tsx:1385
 msgid "Extra requests overflow to other accounts in the same tier, then wait in a queue. Leave blank or 0 for unlimited."
 msgstr "Extra requests overflow to other accounts in the same tier, then wait in a queue. Leave blank or 0 for unlimited."
 
@@ -828,15 +862,19 @@ msgstr "Failed to load dashboard"
 msgid "Family"
 msgstr "Family"
 
+#: src/admin-ui/quota-capacity.tsx:50
+msgid "First observation"
+msgstr "First observation"
+
 #: src/admin-ui/settings.tsx:47
 msgid "Forwarded headers"
 msgstr "Forwarded headers"
 
-#: src/admin-ui/accounts.tsx:615
+#: src/admin-ui/accounts.tsx:616
 msgid "Gemini account"
 msgstr "Gemini account"
 
-#: src/admin-ui/accounts.tsx:1240
+#: src/admin-ui/accounts.tsx:1242
 msgid "Gemini endpoint base"
 msgstr "Gemini endpoint base"
 
@@ -852,11 +890,11 @@ msgstr "Generate copy-paste configuration for local AI coding clients."
 msgid "Google API key"
 msgstr "Google API key"
 
-#: src/admin-ui/accounts.tsx:782
+#: src/admin-ui/accounts.tsx:783
 msgid "Google did not return models for this credential."
 msgstr "Google did not return models for this credential."
 
-#: src/admin-ui/accounts.tsx:1009
+#: src/admin-ui/accounts.tsx:1010
 msgid "Granted"
 msgstr "Granted"
 
@@ -880,9 +918,13 @@ msgstr "Healthy accounts"
 msgid "How this Catalog Model reaches its upstream model."
 msgstr "How this Catalog Model reaches its upstream model."
 
-#: src/admin-ui/accounts.tsx:1165
+#: src/admin-ui/accounts.tsx:1167
 msgid "Identify the upstream account and connection endpoint."
 msgstr "Identify the upstream account and connection endpoint."
+
+#: src/admin-ui/quota-capacity.tsx:17
+msgid "Incomplete token metering or a request crossed the baseline. Estimate withheld."
+msgstr "Incomplete token metering or a request crossed the baseline. Estimate withheld."
 
 #: src/admin-ui/client-setup.tsx:563
 msgid "Installs a global plugin and config that refresh the relay model catalog, with the generated list as a fallback. Back up your existing OpenCode config first."
@@ -923,16 +965,16 @@ msgstr "Last used"
 msgid "Latency"
 msgstr "Latency"
 
-#: src/admin-ui/accounts.tsx:1348
+#: src/admin-ui/accounts.tsx:1350
 msgid "Leave the credential blank to keep the current value."
 msgstr "Leave the credential blank to keep the current value."
 
-#: src/admin-ui/accounts.tsx:465
-#: src/admin-ui/accounts.tsx:1309
+#: src/admin-ui/accounts.tsx:466
+#: src/admin-ui/accounts.tsx:1311
 msgid "Legacy Codex credential"
 msgstr "Legacy Codex credential"
 
-#: src/admin-ui/accounts.tsx:154
+#: src/admin-ui/accounts.tsx:155
 msgid "Legacy Codex credentials need migration"
 msgstr "Legacy Codex credentials need migration"
 
@@ -940,7 +982,7 @@ msgstr "Legacy Codex credentials need migration"
 msgid "Light"
 msgstr "Light"
 
-#: src/admin-ui/accounts.tsx:1041
+#: src/admin-ui/accounts.tsx:1042
 msgid "Limit"
 msgstr "Limit"
 
@@ -948,7 +990,7 @@ msgstr "Limit"
 msgid "limited"
 msgstr "limited"
 
-#: src/admin-ui/accounts.tsx:964
+#: src/admin-ui/accounts.tsx:965
 #: src/admin-ui/api-keys.tsx:82
 msgid "Limits"
 msgstr "Limits"
@@ -973,19 +1015,19 @@ msgstr "Manual"
 msgid "Manual refresh token"
 msgstr "Manual refresh token"
 
-#: src/admin-ui/accounts.tsx:469
+#: src/admin-ui/accounts.tsx:470
 msgid "Manual refresh tokens are deprecated. Create a new account with Codex device login when possible."
 msgstr "Manual refresh tokens are deprecated. Create a new account with Codex device login when possible."
 
-#: src/admin-ui/accounts.tsx:1312
+#: src/admin-ui/accounts.tsx:1314
 msgid "Manual refresh tokens are deprecated. Create a new account with Codex device login, then remove this legacy account."
 msgstr "Manual refresh tokens are deprecated. Create a new account with Codex device login, then remove this legacy account."
 
-#: src/admin-ui/accounts.tsx:157
+#: src/admin-ui/accounts.tsx:158
 msgid "Manual refresh tokens are deprecated. New accounts should use Codex device login."
 msgstr "Manual refresh tokens are deprecated. New accounts should use Codex device login."
 
-#: src/admin-ui/accounts.tsx:1367
+#: src/admin-ui/accounts.tsx:1369
 msgid "Max running requests"
 msgstr "Max running requests"
 
@@ -997,7 +1039,7 @@ msgstr "Merge this TOML into ~/.codex/config.toml. It uses TT's dynamic catalog 
 msgid "Messages routed"
 msgstr "Messages routed"
 
-#: src/admin-ui/accounts.tsx:737
+#: src/admin-ui/accounts.tsx:738
 #: src/admin-ui/client-setup.tsx:644
 #: src/admin-ui/logs.tsx:296
 #: src/admin-ui/models.tsx:138
@@ -1023,11 +1065,11 @@ msgstr "Model disabled"
 msgid "Model enabled"
 msgstr "Model enabled"
 
-#: src/admin-ui/accounts.tsx:675
+#: src/admin-ui/accounts.tsx:676
 msgid "Model group"
 msgstr "Model group"
 
-#: src/admin-ui/accounts.tsx:740
+#: src/admin-ui/accounts.tsx:741
 #: src/admin-ui/models.tsx:766
 msgid "Model ID"
 msgstr "Model ID"
@@ -1036,17 +1078,17 @@ msgstr "Model ID"
 msgid "Model updated"
 msgstr "Model updated"
 
-#: src/admin-ui/accounts.tsx:240
-#: src/admin-ui/accounts.tsx:247
-#: src/admin-ui/accounts.tsx:364
+#: src/admin-ui/accounts.tsx:241
+#: src/admin-ui/accounts.tsx:248
+#: src/admin-ui/accounts.tsx:365
 msgid "Models and quota"
 msgstr "Models and quota"
 
-#: src/admin-ui/accounts.tsx:617
+#: src/admin-ui/accounts.tsx:618
 msgid "Models and quota reported by this Google account."
 msgstr "Models and quota reported by this Google account."
 
-#: src/admin-ui/accounts.tsx:1194
+#: src/admin-ui/accounts.tsx:1196
 #: src/admin-ui/api-keys.tsx:73
 #: src/admin-ui/api-keys.tsx:383
 msgid "Name"
@@ -1060,11 +1102,15 @@ msgstr "never"
 msgid "Never"
 msgstr "Never"
 
+#: src/admin-ui/quota-capacity.tsx:46
+msgid "New baseline after incomplete metering"
+msgstr "New baseline after incomplete metering"
+
 #: src/admin-ui/client-setup.tsx:434
 msgid "Newly created keys are prefilled here once. Existing rows only show previews, so paste the original tokentoxication-* value before copying a setup block."
 msgstr "Newly created keys are prefilled here once. Existing rows only show previews, so paste the original tokentoxication-* value before copying a setup block."
 
-#: src/admin-ui/accounts.tsx:781
+#: src/admin-ui/accounts.tsx:782
 msgid "No account models returned"
 msgstr "No account models returned"
 
@@ -1130,18 +1176,18 @@ msgstr "No opencode routes"
 msgid "No Pi routes"
 msgstr "No Pi routes"
 
-#: src/admin-ui/accounts.tsx:165
+#: src/admin-ui/accounts.tsx:166
 #: src/admin-ui/dashboard.tsx:124
 msgid "No provider accounts"
 msgstr "No provider accounts"
 
-#: src/admin-ui/accounts.tsx:502
+#: src/admin-ui/accounts.tsx:503
 #: src/admin-ui/models.tsx:309
 #: src/admin-ui/models.tsx:453
 msgid "No provider routes"
 msgstr "No provider routes"
 
-#: src/admin-ui/accounts.tsx:1095
+#: src/admin-ui/accounts.tsx:1096
 msgid "No quota windows returned"
 msgstr "No quota windows returned"
 
@@ -1193,7 +1239,16 @@ msgstr "Now"
 msgid "OAuth tokens are exchanged and managed by the relay."
 msgstr "OAuth tokens are exchanged and managed by the relay."
 
-#: src/admin-ui/accounts.tsx:837
+#: src/admin-ui/quota-capacity.tsx:138
+msgid "Observation details"
+msgstr "Observation details"
+
+#: src/admin-ui/quota-capacity.tsx:162
+#: src/admin-ui/quota-capacity.tsx:165
+msgid "Observed token capacity"
+msgstr "Observed token capacity"
+
+#: src/admin-ui/accounts.tsx:838
 msgid "Open Codex verification page"
 msgstr "Open Codex verification page"
 
@@ -1224,6 +1279,10 @@ msgstr "OTPS"
 msgid "OTPS {0}"
 msgstr "OTPS {0}"
 
+#: src/admin-ui/quota-capacity.tsx:57
+msgid "Output"
+msgstr "Output"
+
 #: src/admin-routes.tsx:8
 msgid "Overview"
 msgstr "Overview"
@@ -1240,7 +1299,7 @@ msgstr "partially limited"
 msgid "Password"
 msgstr "Password"
 
-#: src/admin-ui/accounts.tsx:1145
+#: src/admin-ui/accounts.tsx:1147
 msgid "Paste the value from tokens.refresh_token or openai.refresh"
 msgstr "Paste the value from tokens.refresh_token or openai.refresh"
 
@@ -1277,9 +1336,13 @@ msgstr "Permissions"
 msgid "Pi custom provider"
 msgstr "Pi custom provider"
 
-#: src/admin-ui/accounts.tsx:959
+#: src/admin-ui/accounts.tsx:960
 msgid "Plan"
 msgstr "Plan"
+
+#: src/admin-ui/quota-capacity.tsx:40
+msgid "Plan or window changed"
+msgstr "Plan or window changed"
 
 #: src/admin-ui/client-setup.tsx:547
 msgid "Points Claude Code at the Anthropic Messages namespace."
@@ -1290,7 +1353,7 @@ msgstr "Points Claude Code at the Anthropic Messages namespace."
 msgid "Policy"
 msgstr "Policy"
 
-#: src/admin-ui/accounts.tsx:1168
+#: src/admin-ui/accounts.tsx:1170
 msgid "Preset"
 msgstr "Preset"
 
@@ -1302,8 +1365,9 @@ msgstr "Preview"
 msgid "primary"
 msgstr "primary"
 
-#: src/admin-ui/accounts.tsx:903
+#: src/admin-ui/accounts.tsx:904
 #: src/admin-ui/models.tsx:983
+#: src/admin-ui/quota-capacity.tsx:70
 msgid "Primary"
 msgstr "Primary"
 
@@ -1311,20 +1375,20 @@ msgstr "Primary"
 msgid "Primary and backup bindings from public models to upstream models."
 msgstr "Primary and backup bindings from public models to upstream models."
 
-#: src/admin-ui/accounts.tsx:637
+#: src/admin-ui/accounts.tsx:638
 msgid "Project"
 msgstr "Project"
 
-#: src/admin-ui/accounts.tsx:421
-#: src/admin-ui/accounts.tsx:1214
+#: src/admin-ui/accounts.tsx:422
+#: src/admin-ui/accounts.tsx:1216
 #: src/admin-ui/models.tsx:248
 #: src/admin-ui/models.tsx:691
 #: src/admin-ui/models.tsx:954
 msgid "Protocol"
 msgstr "Protocol"
 
-#: src/admin-ui/accounts.tsx:402
-#: src/admin-ui/accounts.tsx:1205
+#: src/admin-ui/accounts.tsx:403
+#: src/admin-ui/accounts.tsx:1207
 msgid "Provider"
 msgstr "Provider"
 
@@ -1333,7 +1397,7 @@ msgid "Provider account"
 msgstr "Provider account"
 
 #: src/admin-routes.tsx:12
-#: src/admin-ui/accounts.tsx:348
+#: src/admin-ui/accounts.tsx:349
 #: src/admin-ui/logs.tsx:74
 #: src/admin-ui/logs.tsx:212
 #: src/admin-ui/models.tsx:245
@@ -1350,7 +1414,7 @@ msgstr "Provider account created"
 msgid "Provider account deleted"
 msgstr "Provider account deleted"
 
-#: src/admin-ui/accounts.tsx:318
+#: src/admin-ui/accounts.tsx:319
 msgid "Provider account not found"
 msgstr "Provider account not found"
 
@@ -1359,8 +1423,8 @@ msgid "Provider account updated"
 msgstr "Provider account updated"
 
 #: src/admin-routes.tsx:11
-#: src/admin-ui/accounts.tsx:138
-#: src/admin-ui/accounts.tsx:343
+#: src/admin-ui/accounts.tsx:139
+#: src/admin-ui/accounts.tsx:344
 msgid "Provider Accounts"
 msgstr "Provider Accounts"
 
@@ -1377,7 +1441,7 @@ msgstr "Provider Model Route"
 msgid "Provider Model Route not found"
 msgstr "Provider Model Route not found"
 
-#: src/admin-ui/accounts.tsx:493
+#: src/admin-ui/accounts.tsx:494
 #: src/admin-ui/models.tsx:228
 #: src/admin-ui/models.tsx:444
 msgid "Provider Model Routes"
@@ -1419,25 +1483,45 @@ msgstr "Public model identity and client-facing metadata."
 msgid "Queue wait"
 msgstr "Queue wait"
 
-#: src/admin-ui/accounts.tsx:358
+#: src/admin-ui/accounts.tsx:359
 msgid "Quota"
 msgstr "Quota"
+
+#: src/admin-ui/quota-capacity.tsx:44
+msgid "Quota correction"
+msgstr "Quota correction"
 
 #: src/admin-ui/helpers.tsx:50
 msgid "quota exhausted"
 msgstr "quota exhausted"
 
-#: src/admin-ui/accounts.tsx:645
+#: src/admin-ui/quota-capacity.tsx:21
+msgid "Quota observations are out of date. Waiting for a successful refresh."
+msgstr "Quota observations are out of date. Waiting for a successful refresh."
+
+#: src/admin-ui/quota-capacity.tsx:32
+msgid "Quota recovery confirmed"
+msgstr "Quota recovery confirmed"
+
+#: src/admin-ui/accounts.tsx:646
 msgid "Quota source"
 msgstr "Quota source"
 
-#: src/admin-ui/accounts.tsx:658
+#: src/admin-ui/accounts.tsx:659
 msgid "Quota summary unavailable"
 msgstr "Quota summary unavailable"
 
-#: src/admin-ui/accounts.tsx:977
+#: src/admin-ui/accounts.tsx:978
 msgid "Quota unavailable"
 msgstr "Quota unavailable"
+
+#: src/admin-ui/quota-capacity.tsx:34
+msgid "Quota window reset"
+msgstr "Quota window reset"
+
+#: src/admin-ui/quota-capacity.tsx:176
+msgid "Quota windows are measured independently; do not add their token totals. Reopen this dialog to see the latest data."
+msgstr "Quota windows are measured independently; do not add their token totals. Reopen this dialog to see the latest data."
 
 #: src/admin-ui/api-keys.tsx:301
 msgid "Rate limit"
@@ -1447,7 +1531,7 @@ msgstr "Rate limit"
 msgid "rate limited"
 msgstr "rate limited"
 
-#: src/admin-ui/accounts.tsx:1141
+#: src/admin-ui/accounts.tsx:1143
 msgid "Raw refresh token"
 msgstr "Raw refresh token"
 
@@ -1455,18 +1539,30 @@ msgstr "Raw refresh token"
 msgid "Reached"
 msgstr "Reached"
 
+#: src/admin-ui/quota-capacity.tsx:195
+msgid "Recent observation segments"
+msgstr "Recent observation segments"
+
 #: src/admin-ui/logs.tsx:269
 msgid "Recent requests"
 msgstr "Recent requests"
 
-#: src/admin-ui/accounts.tsx:370
+#: src/admin-ui/accounts.tsx:371
 msgid "Reconnect"
 msgstr "Reconnect"
 
-#: src/admin-ui/accounts.tsx:258
-#: src/admin-ui/accounts.tsx:265
+#: src/admin-ui/accounts.tsx:259
+#: src/admin-ui/accounts.tsx:266
 msgid "Reconnect Antigravity"
 msgstr "Reconnect Antigravity"
+
+#: src/admin-ui/quota-capacity.tsx:88
+msgid "Recorded tokens"
+msgstr "Recorded tokens"
+
+#: src/admin-ui/quota-capacity.tsx:87
+msgid "Recorded tokens (incomplete observation)"
+msgstr "Recorded tokens (incomplete observation)"
 
 #: src/admin-ui/helpers.tsx:71
 msgid "recovering"
@@ -1492,7 +1588,7 @@ msgstr "Refresh the admin data to load the overview."
 msgid "Register an exact public model name clients may send."
 msgstr "Register an exact public model name clients may send."
 
-#: src/admin-ui/accounts.tsx:1155
+#: src/admin-ui/accounts.tsx:1157
 msgid "Register an upstream credential for relay scheduling."
 msgstr "Register an upstream credential for relay scheduling."
 
@@ -1504,7 +1600,7 @@ msgstr "Relay API key"
 msgid "Relay control plane"
 msgstr "Relay control plane"
 
-#: src/admin-ui/accounts.tsx:971
+#: src/admin-ui/accounts.tsx:972
 msgid "Relay endpoint"
 msgstr "Relay endpoint"
 
@@ -1520,11 +1616,15 @@ msgstr "Relay result and accounting for this completed attempt."
 msgid "Relay status, latency, model, sanitized routing metadata, and token accounting."
 msgstr "Relay status, latency, model, sanitized routing metadata, and token accounting."
 
-#: src/admin-ui/accounts.tsx:681
-#: src/admin-ui/accounts.tsx:743
-#: src/admin-ui/accounts.tsx:1047
+#: src/admin-ui/accounts.tsx:682
+#: src/admin-ui/accounts.tsx:744
+#: src/admin-ui/accounts.tsx:1048
 msgid "Remaining"
 msgstr "Remaining"
+
+#: src/admin-ui/quota-capacity.tsx:79
+msgid "Remaining · consumed {consumedPoints} percentage points"
+msgstr "Remaining · consumed {consumedPoints} percentage points"
 
 #: src/admin-ui/logs.tsx:293
 #: src/admin-ui/logs.tsx:403
@@ -1582,17 +1682,21 @@ msgstr "Requests rejected before an upstream account could be selected."
 msgid "Requests today"
 msgstr "Requests today"
 
-#: src/admin-ui/accounts.tsx:684
-#: src/admin-ui/accounts.tsx:746
-#: src/admin-ui/accounts.tsx:1050
+#: src/admin-ui/accounts.tsx:685
+#: src/admin-ui/accounts.tsx:747
+#: src/admin-ui/accounts.tsx:1051
 msgid "Reset"
 msgstr "Reset"
 
-#: src/admin-ui/accounts.tsx:1003
+#: src/admin-ui/quota-capacity.tsx:42
+msgid "Reset boundary changed"
+msgstr "Reset boundary changed"
+
+#: src/admin-ui/accounts.tsx:1004
 msgid "Reset credit"
 msgstr "Reset credit"
 
-#: src/admin-ui/accounts.tsx:966
+#: src/admin-ui/accounts.tsx:967
 msgid "Reset credits"
 msgstr "Reset credits"
 
@@ -1604,7 +1708,7 @@ msgstr "Responses routed"
 msgid "Retry-After"
 msgstr "Retry-After"
 
-#: src/admin-ui/accounts.tsx:517
+#: src/admin-ui/accounts.tsx:518
 #: src/admin-ui/models.tsx:251
 #: src/admin-ui/models.tsx:468
 #: src/admin-ui/models.tsx:697
@@ -1620,7 +1724,7 @@ msgstr "Routable Responses models"
 msgid "Route"
 msgstr "Route"
 
-#: src/admin-ui/accounts.tsx:1362
+#: src/admin-ui/accounts.tsx:1364
 msgid "Route binding"
 msgstr "Route binding"
 
@@ -1636,7 +1740,7 @@ msgstr "Route enabled"
 msgid "Routes"
 msgstr "Routes"
 
-#: src/admin-ui/accounts.tsx:1356
+#: src/admin-ui/accounts.tsx:1358
 msgid "Routing and limits"
 msgstr "Routing and limits"
 
@@ -1657,11 +1761,11 @@ msgstr "Routing warnings"
 msgid "RPM"
 msgstr "RPM"
 
-#: src/admin-ui/accounts.tsx:208
+#: src/admin-ui/accounts.tsx:209
 msgid "running"
 msgstr "running"
 
-#: src/admin-ui/accounts.tsx:439
+#: src/admin-ui/accounts.tsx:440
 msgid "Running requests"
 msgstr "Running requests"
 
@@ -1671,13 +1775,17 @@ msgstr "Running requests"
 msgid "Runtime"
 msgstr "Runtime"
 
-#: src/admin-ui/accounts.tsx:1418
+#: src/admin-ui/quota-capacity.tsx:36
+msgid "Sampling gap"
+msgstr "Sampling gap"
+
+#: src/admin-ui/accounts.tsx:1420
 #: src/admin-ui/models.tsx:435
 #: src/admin-ui/models.tsx:648
 msgid "Save changes"
 msgstr "Save changes"
 
-#: src/admin-ui/accounts.tsx:1391
+#: src/admin-ui/accounts.tsx:1393
 msgid "Schedulable"
 msgstr "Schedulable"
 
@@ -1685,7 +1793,8 @@ msgstr "Schedulable"
 msgid "Search model, display name, or family"
 msgstr "Search model, display name, or family"
 
-#: src/admin-ui/accounts.tsx:904
+#: src/admin-ui/accounts.tsx:905
+#: src/admin-ui/quota-capacity.tsx:70
 msgid "Secondary"
 msgstr "Secondary"
 
@@ -1696,6 +1805,10 @@ msgstr "Select account"
 #: src/admin-ui/models.tsx:904
 msgid "Select model"
 msgstr "Select model"
+
+#: src/admin-ui/quota-capacity.tsx:38
+msgid "Server restarted"
+msgstr "Server restarted"
 
 #: src/admin-ui/client-setup.tsx:523
 msgid "Set the relay key and download the Desktop compatibility catalog before starting Codex."
@@ -1709,16 +1822,20 @@ msgstr "Set TOKEN_TOXICATION_API_KEY in the harness process environment, then me
 msgid "Settings"
 msgstr "Settings"
 
+#: src/admin-ui/quota-capacity.tsx:48
+msgid "Settled baseline"
+msgstr "Settled baseline"
+
 #: src/App.tsx:224
 msgid "Sign in"
 msgstr "Sign in"
 
-#: src/admin-ui/accounts.tsx:1416
+#: src/admin-ui/accounts.tsx:1418
 msgid "Sign in with Antigravity"
 msgstr "Sign in with Antigravity"
 
-#: src/admin-ui/accounts.tsx:874
-#: src/admin-ui/accounts.tsx:1414
+#: src/admin-ui/accounts.tsx:875
+#: src/admin-ui/accounts.tsx:1416
 msgid "Sign in with Codex"
 msgstr "Sign in with Codex"
 
@@ -1738,18 +1855,18 @@ msgstr "Signed in"
 msgid "Signed out"
 msgstr "Signed out"
 
-#: src/admin-ui/accounts.tsx:991
+#: src/admin-ui/accounts.tsx:992
 msgid "Spending limit"
 msgstr "Spending limit"
 
-#: src/admin-ui/accounts.tsx:850
+#: src/admin-ui/accounts.tsx:851
 msgid "Start a new sign-in to try again."
 msgstr "Start a new sign-in to try again."
 
-#: src/admin-ui/accounts.tsx:433
-#: src/admin-ui/accounts.tsx:523
-#: src/admin-ui/accounts.tsx:1006
-#: src/admin-ui/accounts.tsx:1053
+#: src/admin-ui/accounts.tsx:434
+#: src/admin-ui/accounts.tsx:524
+#: src/admin-ui/accounts.tsx:1007
+#: src/admin-ui/accounts.tsx:1054
 #: src/admin-ui/api-keys.tsx:295
 #: src/admin-ui/logs.tsx:299
 #: src/admin-ui/logs.tsx:406
@@ -1785,7 +1902,7 @@ msgstr "strip {params}"
 msgid "Strip request params"
 msgstr "Strip request params"
 
-#: src/admin-ui/accounts.tsx:940
+#: src/admin-ui/accounts.tsx:941
 msgid "Subscription quota reported by this Codex account."
 msgstr "Subscription quota reported by this Codex account."
 
@@ -1797,7 +1914,7 @@ msgstr "System"
 msgid "The relay manages the Codex device-login credential; no token is editable here."
 msgstr "The relay manages the Codex device-login credential; no token is editable here."
 
-#: src/admin-ui/accounts.tsx:1096
+#: src/admin-ui/accounts.tsx:1097
 msgid "The relay returned no Codex quota windows."
 msgstr "The relay returned no Codex quota windows."
 
@@ -1829,7 +1946,7 @@ msgstr "This API key may have been deleted or the link is incomplete."
 msgid "This Catalog Model may have been deleted or the link is incomplete."
 msgstr "This Catalog Model may have been deleted or the link is incomplete."
 
-#: src/admin-ui/accounts.tsx:319
+#: src/admin-ui/accounts.tsx:320
 msgid "This provider account may have been deleted or the link is incomplete."
 msgstr "This provider account may have been deleted or the link is incomplete."
 
@@ -1845,9 +1962,17 @@ msgstr "This Request Log may have aged out of the current log collection or the 
 msgid "This secret is shown once."
 msgstr "This secret is shown once."
 
-#: src/admin-ui/accounts.tsx:644
+#: src/admin-ui/quota-capacity.tsx:9
+msgid "This segment has ended without enough reliable data for an estimate."
+msgstr "This segment has ended without enough reliable data for an estimate."
+
+#: src/admin-ui/accounts.tsx:645
 msgid "Tier"
 msgstr "Tier"
+
+#: src/admin-ui/quota-capacity.tsx:151
+msgid "Tier is the requested service tier. Retries count as separate attempts."
+msgstr "Tier is the requested service tier. Retries count as separate attempts."
 
 #: src/admin-ui/logs.tsx:290
 #: src/admin-ui/logs.tsx:594
@@ -1858,6 +1983,10 @@ msgstr "Time"
 #: src/admin-ui/logs.tsx:618
 msgid "Tokens"
 msgstr "Tokens"
+
+#: src/admin-ui/quota-capacity.tsx:23
+msgid "Tokens cannot be attributed to this quota pool."
+msgstr "Tokens cannot be attributed to this quota pool."
 
 #: src/admin-ui/dashboard.tsx:57
 msgid "Tokens today"
@@ -1878,7 +2007,7 @@ msgstr "TTFT {0}"
 msgid "Unable to connect Codex account"
 msgstr "Unable to connect Codex account"
 
-#: src/admin-ui/accounts.tsx:629
+#: src/admin-ui/accounts.tsx:630
 msgid "Unable to load account data"
 msgstr "Unable to load account data"
 
@@ -1890,7 +2019,7 @@ msgstr "Unable to load Codex quota"
 msgid "Unable to load Gemini account data"
 msgstr "Unable to load Gemini account data"
 
-#: src/admin-ui/accounts.tsx:952
+#: src/admin-ui/accounts.tsx:953
 msgid "Unable to load quota"
 msgstr "Unable to load quota"
 
@@ -1898,18 +2027,22 @@ msgstr "Unable to load quota"
 msgid "Unable to start Antigravity sign-in"
 msgstr "Unable to start Antigravity sign-in"
 
+#: src/admin-ui/quota-capacity.tsx:57
+msgid "Uncached input"
+msgstr "Uncached input"
+
 #: src/admin-ui/client-setup.tsx:444
 msgid "Unexpected key prefix"
 msgstr "Unexpected key prefix"
 
-#: src/admin-ui/accounts.tsx:638
-#: src/admin-ui/accounts.tsx:642
-#: src/admin-ui/accounts.tsx:645
-#: src/admin-ui/accounts.tsx:712
-#: src/admin-ui/accounts.tsx:762
-#: src/admin-ui/accounts.tsx:959
-#: src/admin-ui/accounts.tsx:962
-#: src/admin-ui/accounts.tsx:1075
+#: src/admin-ui/accounts.tsx:639
+#: src/admin-ui/accounts.tsx:643
+#: src/admin-ui/accounts.tsx:646
+#: src/admin-ui/accounts.tsx:713
+#: src/admin-ui/accounts.tsx:763
+#: src/admin-ui/accounts.tsx:960
+#: src/admin-ui/accounts.tsx:963
+#: src/admin-ui/accounts.tsx:1076
 #: src/admin-ui/helpers.tsx:133
 #: src/admin-ui/helpers.tsx:440
 #: src/admin-ui/helpers.tsx:442
@@ -1928,12 +2061,12 @@ msgstr "unknown"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: src/admin-ui/accounts.tsx:1378
+#: src/admin-ui/accounts.tsx:1380
 #: src/admin-ui/helpers.tsx:518
 msgid "Unlimited"
 msgstr "Unlimited"
 
-#: src/admin-ui/accounts.tsx:912
+#: src/admin-ui/accounts.tsx:913
 msgid "Unreported"
 msgstr "Unreported"
 
@@ -1942,7 +2075,7 @@ msgstr "Unreported"
 msgid "until {0}"
 msgstr "until {0}"
 
-#: src/admin-ui/accounts.tsx:1154
+#: src/admin-ui/accounts.tsx:1156
 msgid "Update routing details or replace the upstream credential."
 msgstr "Update routing details or replace the upstream credential."
 
@@ -1950,19 +2083,19 @@ msgstr "Update routing details or replace the upstream credential."
 msgid "Upstream"
 msgstr "Upstream"
 
-#: src/admin-ui/accounts.tsx:1141
+#: src/admin-ui/accounts.tsx:1143
 msgid "Upstream API key"
 msgstr "Upstream API key"
 
-#: src/admin-ui/accounts.tsx:1146
+#: src/admin-ui/accounts.tsx:1148
 msgid "Upstream credential"
 msgstr "Upstream credential"
 
-#: src/admin-ui/accounts.tsx:141
+#: src/admin-ui/accounts.tsx:142
 msgid "Upstream credentials used by model routes."
 msgstr "Upstream credentials used by model routes."
 
-#: src/admin-ui/accounts.tsx:514
+#: src/admin-ui/accounts.tsx:515
 #: src/admin-ui/models.tsx:242
 #: src/admin-ui/models.tsx:462
 #: src/admin-ui/models.tsx:685
@@ -1973,7 +2106,7 @@ msgstr "Upstream Model"
 msgid "Upstream model ID"
 msgstr "Upstream model ID"
 
-#: src/admin-ui/accounts.tsx:1364
+#: src/admin-ui/accounts.tsx:1366
 msgid "Upstream path"
 msgstr "Upstream path"
 
@@ -1986,7 +2119,7 @@ msgstr "usable client credentials"
 msgid "Usage"
 msgstr "Usage"
 
-#: src/admin-ui/accounts.tsx:668
+#: src/admin-ui/accounts.tsx:669
 msgid "Usage windows"
 msgstr "Usage windows"
 
@@ -1998,7 +2131,7 @@ msgstr "Use a relay API key secret"
 msgid "Use the credentials from your service environment."
 msgstr "Use the credentials from your service environment."
 
-#: src/admin-ui/accounts.tsx:1394
+#: src/admin-ui/accounts.tsx:1396
 msgid "Use this account for relay traffic"
 msgstr "Use this account for relay traffic"
 
@@ -2006,11 +2139,19 @@ msgstr "Use this account for relay traffic"
 msgid "Username"
 msgstr "Username"
 
-#: src/admin-ui/accounts.tsx:843
+#: src/admin-ui/accounts.tsx:844
 msgid "Waiting for Codex sign-in to complete…"
 msgstr "Waiting for Codex sign-in to complete…"
 
-#: src/admin-ui/accounts.tsx:520
+#: src/admin-ui/quota-capacity.tsx:19
+msgid "Waiting for requests to finish and quota to settle."
+msgstr "Waiting for requests to finish and quota to settle."
+
+#: src/admin-ui/quota-capacity.tsx:189
+msgid "Waiting for the first quota observation."
+msgstr "Waiting for the first quota observation."
+
+#: src/admin-ui/accounts.tsx:521
 #: src/admin-ui/models.tsx:471
 #: src/admin-ui/models.tsx:703
 #: src/admin-ui/models.tsx:994
@@ -2021,8 +2162,8 @@ msgstr "Weight"
 msgid "Weight applies among healthy routes with the same role. Primary routes are preferred over backups."
 msgstr "Weight applies among healthy routes with the same role. Primary routes are preferred over backups."
 
-#: src/admin-ui/accounts.tsx:678
-#: src/admin-ui/accounts.tsx:1044
+#: src/admin-ui/accounts.tsx:679
+#: src/admin-ui/accounts.tsx:1045
 msgid "Window"
 msgstr "Window"
 

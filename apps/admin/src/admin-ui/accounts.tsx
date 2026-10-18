@@ -1,3 +1,4 @@
+import { QuotaCapacity } from "./quota-capacity";
 import { useMemo } from "react";
 import type React from "react";
 import { Link, useNavigate, useParams } from "react-router";
@@ -1101,6 +1102,7 @@ export function CodexAccountDialog({
                 </TableBody>
               </Table>
             </div>
+            <QuotaCapacity reports={quota?.capacity ?? []} />
           </div>
         )}
       </DialogContent>

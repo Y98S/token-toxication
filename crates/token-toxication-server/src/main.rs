@@ -100,8 +100,11 @@ async fn run_server(config: Config) -> Result<(), MainError> {
     );
     let managed_catalog_monitor =
         token_toxication_server::routes::spawn_managed_catalog_monitor(state.clone());
+    let capacity_monitor = token_toxication_server::quota_capacity::spawn(state.clone());
     let app = app(state, config.static_dir.clone());
     let result = server::serve(config, https_config, app, shutdown.clone()).await;
+    capacity_monitor.abort();
+    let _ = capacity_monitor.await;
     quota_monitor.abort();
     let _ = quota_monitor.await;
     managed_catalog_monitor.abort();

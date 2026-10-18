@@ -452,6 +452,8 @@ pub struct CodexAccountResetCredit {
 #[derive(Debug, Clone, Serialize, Deserialize, ToSchema)]
 #[serde(rename_all = "camelCase")]
 pub struct CodexAccountQuotaResponse {
+    #[serde(default)]
+    pub capacity: Vec<crate::quota_capacity::CapacityReport>,
     pub account_id: String,
     pub auth_mode: String,
     pub endpoint: String,
@@ -625,6 +627,14 @@ pub struct RequestLogListResponse {
 #[derive(Debug, Clone, Serialize, Deserialize, ToSchema)]
 #[serde(rename_all = "camelCase")]
 pub struct RequestSummary {
+    /// Unknown on historical logs; false is never silently treated as zero use.
+    #[serde(default)]
+    pub usage_complete: Option<bool>,
+    #[serde(default)]
+    pub attempt_started_at: Option<DateTime<Utc>>,
+    /// Forwarded request tier, not a claim about the tier actually delivered.
+    #[serde(default)]
+    pub service_tier: Option<String>,
     pub top_level_keys: Vec<String>,
     pub body_bytes: u64,
     pub stream: bool,

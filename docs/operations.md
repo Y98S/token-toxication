@@ -127,3 +127,57 @@ When systemd runs the service as a non-root user on ports 80 or 443, grant only 
 AmbientCapabilities=CAP_NET_BIND_SERVICE
 CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 ```
+
+## Observed Codex token capacity
+
+The Codex account quota dialog automatically shows observation segments for each
+quota window, recorded token composition, and an estimated full-quota capacity.
+There is no calibration button or exclusive-use setting. Existing request history
+cannot reconstruct old quota changes: observation starts after this version runs.
+
+For active Codex subscription accounts, the server samples quota once per minute
+while requests are running and for ten minutes after recent activity. New accounts
+receive an initial baseline. Idle accounts continue sampling approximately every
+three minutes to preserve a settled baseline for the next session. Sampling uses at most four concurrent queries with a
+20-second deadline each and does not change routing health. Large account lists
+or slow upstreams can reduce sampling frequency. Opening the quota dialog also
+records a sample. Reopen the dialog to retrieve the latest observation.
+
+The generic `codex` pool is evaluated independently for its primary and secondary
+windows; these overlap and their token counts must not be added together.
+Additional quota pools are displayed without token attribution. Tokens are split
+into uncached input (`input - cached input`), cached input, and output. Reasoning
+is already part of output. Each upstream attempt, including retries and failures
+with reported usage, counts separately. The workload detail lists models and
+requested service tiers, not a guarantee of the tier actually delivered.
+
+A full-quota estimate uses `observed tokens × 100 / consumed percentage points`.
+It requires at least 10 percentage points of consumption (a conservative product
+threshold, not an upstream guarantee), complete usage metadata, and idle endpoints
+with no completed proxy requests in the preceding 30 seconds. Missing usage is
+unknown, not zero. Requests crossing the baseline disable the estimate. Incomplete intervals are
+archived at the next settled sample and collection resumes from a fresh baseline
+automatically; unknown tokens are never filled in as zero. During
+continuous activity the panel can remain in a settling state. A first busy interval
+without a settled baseline may be excluded; collection resumes automatically once
+a settled baseline is available.
+
+A new segment starts after a server restart, a sampling gap over five minutes,
+a plan/window change, or a reset boundary change. A remaining-quota increase of
+at least one percentage point is confirmed by a later sample at least 30 seconds
+apart; smaller corrections conservatively start a fresh segment. Confirmed
+recoveries also work without reset-credit records, including observable extra
+resets granted by Tibo. The system labels the observed recovery, not its source.
+Consumption that hides a reset between samples cannot be detected reliably.
+Ambiguous recovery intervals are excluded from extrapolation.
+
+External account usage, upstream lag, rounding, changes in model/token mix, and
+unobserved resets can bias results. Neither an estimate nor a full observed segment
+is an official token allowance. The UI always explains this limitation and never
+requires users to confirm exclusive proxy use.
+
+Sanitized quota snapshots (no credentials or request bodies) are kept for 90 days
+per sampled account. Up to 40 historical window segments are retained per account;
+the UI returns the latest six. Historical totals are derived from retained request
+logs, so removing logs also removes their metering evidence. Cleanup runs when a
+new sample is saved; inactive accounts are not a strict wall-clock retention job.

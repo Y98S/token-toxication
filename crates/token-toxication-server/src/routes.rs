@@ -1778,9 +1778,12 @@ pub async fn get_codex_account_quota(
     State(state): State<AppState>,
     Path(id): Path<String>,
 ) -> Result<Json<CodexAccountQuotaResponse>, AppError> {
-    Ok(Json(
-        codex_account_quota(&state.db, &state.http, &state.codex_device_oauth, &id).await?,
-    ))
+    let started = Utc::now();
+    let idle = state.account_concurrency.load(&id).running == 0;
+    let mut quota =
+        codex_account_quota(&state.db, &state.http, &state.codex_device_oauth, &id).await?;
+    crate::quota_capacity::capture(&state, &mut quota, started, idle).await?;
+    Ok(Json(quota))
 }
 
 pub async fn list_provider_presets() -> Json<ProviderPresetListResponse> {
@@ -2418,6 +2421,18 @@ fn build_request_summary(
         .unwrap_or_default();
     top_level_keys.sort();
     RequestSummary {
+        usage_complete: None,
+        attempt_started_at: None,
+        service_tier: Some(
+            match value.get("service_tier").and_then(Value::as_str) {
+                Some("priority" | "fast") => "priority",
+                Some("ultrafast") => "ultrafast",
+                Some("flex") => "flex",
+                None | Some("default" | "standard" | "auto") => "default",
+                _ => "unknown",
+            }
+            .to_owned(),
+        ),
         top_level_keys,
         body_bytes,
         stream: value
@@ -2826,6 +2841,10 @@ impl UsageUpdate {
         }
 
         TokenUsage {
+            complete: self.input_tokens.is_some()
+                && self.output_tokens.is_some()
+                && (self.cached_input_tokens.is_some() || self.cache_read_input_tokens.is_some())
+                && cached_input_tokens <= input_tokens,
             input_tokens,
             cached_input_tokens,
             output_tokens: self.output_tokens.unwrap_or(0),
@@ -5771,6 +5790,7 @@ mod tests {
                 cached_input_tokens: 6,
                 output_tokens: 7,
                 generation_ms: None,
+                complete: true,
             }
         );
     }
@@ -5788,6 +5808,7 @@ mod tests {
                 cached_input_tokens: 0,
                 output_tokens: 4,
                 generation_ms: None,
+                complete: false,
             }
         );
         assert_eq!(parse_usage(b"not json"), TokenUsage::default());
@@ -5812,6 +5833,7 @@ mod tests {
                 cached_input_tokens: 100,
                 output_tokens: 9,
                 generation_ms: None,
+                complete: true,
             }
         );
     }
@@ -5838,6 +5860,7 @@ mod tests {
                 cached_input_tokens: 10,
                 output_tokens: 8,
                 generation_ms: None,
+                complete: true,
             }
         );
     }

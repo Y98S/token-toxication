@@ -1,4 +1,5 @@
 export type {
+  CapacityReport,
   AntigravityOAuthStartRequest,
   AntigravityOAuthStartResponse,
   ApiKeyView as ApiKey,

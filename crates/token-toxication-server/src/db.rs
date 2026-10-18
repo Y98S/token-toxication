@@ -1,3 +1,5 @@
+#[path = "quota_capacity_db.rs"]
+mod quota_capacity;
 use std::{collections::HashSet, path::Path, sync::Arc};
 
 use chrono::{DateTime, Duration, NaiveDate, Utc};
@@ -182,6 +184,7 @@ impl Db {
             CREATE INDEX IF NOT EXISTS idx_api_keys_hash ON api_keys(key_hash);
             "#,
         )?;
+        quota_capacity::migrate(&conn)?;
         ensure_column(
             &conn,
             "provider_accounts",

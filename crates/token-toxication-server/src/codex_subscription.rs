@@ -334,54 +334,13 @@ pub async fn codex_account_quota(
     device_store: &CodexDeviceOAuthStore,
     account_id: &str,
 ) -> Result<CodexAccountQuotaResponse, AppError> {
-    let account = codex_account_record(db, account_id).await?;
-    let result = async {
-        let authorization = if is_codex_device_oauth_auth(&account.account.auth_mode) {
-            crate::codex_device_oauth::authorization(device_store, db, http, &account).await?
-        } else {
-            codex_subscription_authorization(db, http, &account).await?
-        };
-        let endpoint = codex_quota_endpoint(&account.account.base_url)?;
-        let details_endpoint = codex_reset_credits_endpoint(&account.account.base_url)?;
-        let (payload, details) = tokio::join!(
-            fetch_codex_usage(
-                http,
-                &endpoint,
-                &authorization.access_token,
-                authorization.account_id.as_deref(),
-                CODEX_QUOTA_TIMEOUT
-            ),
-            fetch_codex_payload::<CodexResetCreditsDetails>(
-                http,
-                &details_endpoint,
-                &authorization.access_token,
-                authorization.account_id.as_deref(),
-                Duration::from_secs(5)
-            ),
-        );
-        let mut quota = codex_quota_response(
-            account.account.id.clone(),
-            account.account.auth_mode.clone(),
-            endpoint,
-            payload?,
-            Utc::now(),
-        );
-        match details {
-            Ok(details) => {
-                quota.reset_credits_available_count = Some(details.available_count);
-                quota.reset_credits = Some(details.into());
-            }
-            Err(_) => tracing::warn!("Codex reset credit details unavailable; using usage summary"),
-        }
-        Ok(quota)
-    }
-    .await;
+    let result = fetch_codex_account_quota(db, http, device_store, account_id).await;
 
     match result {
         Ok(quota) => {
             if let Some(reset_at) = codex_quota_exhausted_until(&quota) {
                 db.record_provider_limit(
-                    &account.account.id,
+                    account_id,
                     None,
                     "quota_exhausted",
                     "codex_usage_limit_reached",
@@ -389,20 +348,67 @@ pub async fn codex_account_quota(
                 )
                 .await?;
             } else {
-                db.clear_provider_quota_limits(&account.account.id).await?;
-                db.mark_provider_result(&account.account.id, "healthy", None)
-                    .await?;
+                db.clear_provider_quota_limits(account_id).await?;
+                db.mark_provider_result(account_id, "healthy", None).await?;
             }
             Ok(quota)
         }
         Err(error) => {
             if matches!(error, AppError::Unauthorized(_)) {
-                db.mark_provider_result(&account.account.id, "blocked", Some(&error.to_string()))
+                db.mark_provider_result(account_id, "blocked", Some(&error.to_string()))
                     .await?;
             }
             Err(error)
         }
     }
+}
+
+// Read-only with respect to routing health: used by capacity sampling.
+pub(crate) async fn fetch_codex_account_quota(
+    db: &Db,
+    http: &TokioClient,
+    device_store: &CodexDeviceOAuthStore,
+    account_id: &str,
+) -> Result<CodexAccountQuotaResponse, AppError> {
+    let account = codex_account_record(db, account_id).await?;
+    let authorization = if is_codex_device_oauth_auth(&account.account.auth_mode) {
+        crate::codex_device_oauth::authorization(device_store, db, http, &account).await?
+    } else {
+        codex_subscription_authorization(db, http, &account).await?
+    };
+    let endpoint = codex_quota_endpoint(&account.account.base_url)?;
+    let details_endpoint = codex_reset_credits_endpoint(&account.account.base_url)?;
+    let (payload, details) = tokio::join!(
+        fetch_codex_usage(
+            http,
+            &endpoint,
+            &authorization.access_token,
+            authorization.account_id.as_deref(),
+            CODEX_QUOTA_TIMEOUT
+        ),
+        fetch_codex_payload::<CodexResetCreditsDetails>(
+            http,
+            &details_endpoint,
+            &authorization.access_token,
+            authorization.account_id.as_deref(),
+            Duration::from_secs(5)
+        ),
+    );
+    let mut quota = codex_quota_response(
+        account.account.id.clone(),
+        account.account.auth_mode.clone(),
+        endpoint,
+        payload?,
+        Utc::now(),
+    );
+    match details {
+        Ok(details) => {
+            quota.reset_credits_available_count = Some(details.available_count);
+            quota.reset_credits = Some(details.into());
+        }
+        Err(_) => tracing::warn!("Codex reset credit details unavailable; using usage summary"),
+    }
+    Ok(quota)
 }
 
 fn codex_quota_exhausted_until(quota: &CodexAccountQuotaResponse) -> Option<Option<DateTime<Utc>>> {
@@ -525,6 +531,7 @@ fn codex_quota_response(
     }
 
     CodexAccountQuotaResponse {
+        capacity: Vec::new(),
         account_id,
         auth_mode,
         endpoint,
@@ -1215,6 +1222,19 @@ mod tests {
         db.mark_provider_result(&account.id, "blocked", Some("expired credential"))
             .await
             .expect("block account");
+
+        // Background observations must not clear a routing block.
+        fetch_codex_account_quota(
+            &db,
+            &test_http_client(),
+            &CodexDeviceOAuthStore::default(),
+            &account.id,
+        )
+        .await
+        .expect("read-only quota response");
+        let unchanged = db.get_provider_account(&account.id).await.unwrap().unwrap();
+        assert_eq!(unchanged.status, "blocked");
+        assert_eq!(unchanged.last_error.as_deref(), Some("expired credential"));
 
         codex_account_quota(
             &db,
