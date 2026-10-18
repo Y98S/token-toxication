@@ -23,7 +23,7 @@ import {
 } from "./helpers";
 import { RequestLogsView } from "./logs";
 import { EmptyNotice } from "./shared";
-import type { Dashboard, RequestTrend } from "../types";
+import type { ApiKey, ProviderAccount, Dashboard, RequestTrend } from "../types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,10 +31,14 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 
 export function Overview({
   dashboard,
+  apiKeys,
+  accounts,
   onCreateKey,
   onCreateAccount,
 }: {
   dashboard: Dashboard;
+  apiKeys: readonly ApiKey[];
+  accounts: readonly ProviderAccount[];
   onCreateKey: () => void;
   onCreateAccount: () => void;
 }) {
@@ -170,7 +174,12 @@ export function Overview({
         </Card>
       ) : null}
 
-      <RequestLogsView logs={dashboard.recentRequests} compact />
+      <RequestLogsView
+        logs={dashboard.recentRequests}
+        apiKeys={apiKeys}
+        accounts={accounts}
+        compact
+      />
     </div>
   );
 }

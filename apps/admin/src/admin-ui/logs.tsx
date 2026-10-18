@@ -13,7 +13,7 @@ import {
   statusCodeBadge,
 } from "./helpers";
 import { EmptyNotice, MissingRecordView } from "./shared";
-import type { RequestLog } from "../types";
+import type { ApiKey, ProviderAccount, RequestLog } from "../types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -25,7 +25,78 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export function RequestLogDetailView({ logs }: { logs: readonly RequestLog[] }) {
+type RequestLogIdentityData = {
+  apiKeys: readonly Pick<ApiKey, "id" | "name">[];
+  accounts: readonly Pick<ProviderAccount, "id" | "name">[];
+};
+
+const identityLinkClass =
+  "min-w-0 truncate rounded-sm text-foreground underline decoration-border underline-offset-4 hover:decoration-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+export function RequestLogIdentity({
+  log,
+  apiKeys,
+  accounts,
+  stacked = false,
+}: RequestLogIdentityData & {
+  log: Pick<RequestLog, "apiKeyId" | "providerAccountId">;
+  stacked?: boolean;
+}) {
+  const { t } = useLingui();
+  const keyName = apiKeys.find((key) => key.id === log.apiKeyId)?.name ?? log.apiKeyId;
+  const accountName =
+    accounts.find((account) => account.id === log.providerAccountId)?.name ?? log.providerAccountId;
+
+  return (
+    <div className="@container min-w-0" aria-label={t`Request source and provider account`}>
+      <div
+        className={
+          stacked
+            ? "grid min-w-0 gap-1 text-xs"
+            : "grid min-w-0 gap-1 text-xs @min-[22rem]:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] @min-[22rem]:items-center @min-[22rem]:gap-2"
+        }
+      >
+        <div className="flex min-w-0 items-baseline gap-1.5 whitespace-nowrap">
+          <span className="shrink-0 text-muted-foreground">
+            <Trans>Key</Trans>
+          </span>
+          <Link to={adminPaths.key(log.apiKeyId)} className={identityLinkClass} title={keyName}>
+            {keyName}
+          </Link>
+        </div>
+        {!stacked && (
+          <span aria-hidden="true" className="hidden text-muted-foreground @min-[22rem]:block">
+            →
+          </span>
+        )}
+        <div className="flex min-w-0 items-baseline gap-1.5 whitespace-nowrap">
+          <span className="shrink-0 text-muted-foreground">
+            <Trans>Provider Account</Trans>
+          </span>
+          {log.providerAccountId ? (
+            <Link
+              to={adminPaths.account(log.providerAccountId)}
+              className={identityLinkClass}
+              title={accountName ?? undefined}
+            >
+              {accountName}
+            </Link>
+          ) : (
+            <span className="min-w-0 truncate text-muted-foreground" title={t`No backend assigned`}>
+              <Trans>No backend assigned</Trans>
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function RequestLogDetailView({
+  logs,
+  apiKeys,
+  accounts,
+}: RequestLogIdentityData & { logs: readonly RequestLog[] }) {
   const { t } = useLingui();
   const { logId } = useParams();
   const log = logs.find((item) => item.id === logId);
@@ -124,23 +195,43 @@ export function RequestLogDetailView({ logs }: { logs: readonly RequestLog[] }) 
                 <dt className="text-xs text-muted-foreground">
                   <Trans>Client key</Trans>
                 </dt>
-                <dd className="mt-1 font-mono text-xs">{log.apiKeyId}</dd>
+                <dd className="mt-1 min-w-0">
+                  <Link
+                    to={adminPaths.key(log.apiKeyId)}
+                    className={`${identityLinkClass} whitespace-normal break-words`}
+                  >
+                    {apiKeys.find((key) => key.id === log.apiKeyId)?.name ?? log.apiKeyId}
+                  </Link>
+                  <div className="mt-1 break-all font-mono text-xs text-muted-foreground">
+                    {log.apiKeyId}
+                  </div>
+                </dd>
               </div>
-              {log.providerAccountId ? (
-                <div>
-                  <dt className="text-xs text-muted-foreground">
-                    <Trans>Provider Account</Trans>
-                  </dt>
-                  <dd className="mt-1">
-                    <Link
-                      to={adminPaths.account(log.providerAccountId)}
-                      className="font-mono text-xs underline-offset-4 hover:underline"
-                    >
-                      {log.providerAccountId}
-                    </Link>
-                  </dd>
-                </div>
-              ) : null}
+              <div>
+                <dt className="text-xs text-muted-foreground">
+                  <Trans>Provider Account</Trans>
+                </dt>
+                <dd className="mt-1 min-w-0">
+                  {log.providerAccountId ? (
+                    <>
+                      <Link
+                        to={adminPaths.account(log.providerAccountId)}
+                        className={`${identityLinkClass} whitespace-normal break-words`}
+                      >
+                        {accounts.find((account) => account.id === log.providerAccountId)?.name ??
+                          log.providerAccountId}
+                      </Link>
+                      <div className="mt-1 break-all font-mono text-xs text-muted-foreground">
+                        {log.providerAccountId}
+                      </div>
+                    </>
+                  ) : (
+                    <span className="text-muted-foreground">
+                      <Trans>No backend assigned</Trans>
+                    </span>
+                  )}
+                </dd>
+              </div>
             </dl>
           </CardContent>
         </Card>
@@ -163,8 +254,10 @@ export function RequestLogDetailView({ logs }: { logs: readonly RequestLog[] }) 
 
 export function RequestLogsView({
   logs,
+  apiKeys,
+  accounts,
   compact = false,
-}: {
+}: RequestLogIdentityData & {
   logs: readonly RequestLog[];
   compact?: boolean;
 }) {
@@ -233,6 +326,7 @@ export function RequestLogsView({
                       >
                         {log.path}
                       </Link>
+                      <RequestLogIdentity log={log} apiKeys={apiKeys} accounts={accounts} />
                       <span
                         className="block truncate text-xs text-muted-foreground"
                         title={formatRequestSummary(log)}
@@ -331,6 +425,14 @@ export function RequestLogsView({
                       >
                         {formatLogModel(log)}
                       </Link>
+                      <div className="mt-1">
+                        <RequestLogIdentity
+                          log={log}
+                          apiKeys={apiKeys}
+                          accounts={accounts}
+                          stacked
+                        />
+                      </div>
                       <div
                         className="mt-1 truncate text-xs text-muted-foreground"
                         title={formatRequestSummary(log)}
@@ -421,6 +523,7 @@ export function RequestLogsView({
                     <RetryMarker log={log} logs={logs} />
                   </div>
                 </div>
+                <RequestLogIdentity log={log} apiKeys={apiKeys} accounts={accounts} />
                 <div className="grid grid-cols-3 gap-2 text-xs text-muted-foreground">
                   <span>{formatDate(log.createdAt)}</span>
                   <span className="text-right tabular-nums">

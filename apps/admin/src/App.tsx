@@ -324,6 +324,8 @@ function App() {
                     overview: dashboard ? (
                       <Overview
                         dashboard={dashboard}
+                        apiKeys={apiKeys}
+                        accounts={accounts}
                         onCreateKey={() => setIsKeySheetOpen(true)}
                         onCreateAccount={openCreateAccount}
                       />
@@ -407,8 +409,10 @@ function App() {
                         setApiKey={setClientSetupApiKey}
                       />
                     ),
-                    logs: <RequestLogsView logs={logs} />,
-                    "log-detail": <RequestLogDetailView logs={logs} />,
+                    logs: <RequestLogsView logs={logs} apiKeys={apiKeys} accounts={accounts} />,
+                    "log-detail": (
+                      <RequestLogDetailView logs={logs} apiKeys={apiKeys} accounts={accounts} />
+                    ),
                     settings: <SettingsView />,
                     "not-found": <NotFoundView />,
                   }}
